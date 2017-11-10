@@ -45,6 +45,16 @@ export class QuestionComponent implements OnInit {
 
 
   seasons = [
+    '',
+    'Tempereret',
+    'Opvarmet',
+    'Over-ophedet',
+    'Ned-smeltet',
+    'Ud-brændt',
+  ];
+
+  ans = [
+
     'Tempereret',
     'Opvarmet',
     'Over-ophedet',

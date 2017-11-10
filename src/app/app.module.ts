@@ -10,7 +10,7 @@ import {MatStepperModule} from '@angular/material'
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './components/question/question.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
+import {MatChipsModule} from '@angular/material';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    MatRadioModule, MatStepperModule,MatToolbarModule
+    MatRadioModule, MatStepperModule,MatToolbarModule,MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
