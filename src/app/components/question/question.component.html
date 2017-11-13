@@ -1,14 +1,4 @@
 
-<section *ngIf="!showQuestions">
-  <mat-row><mat-cell><h2 style="color:green;padding:20px"> {{status}} </h2></mat-cell>
-  <mat-cell><mat-spinner *ngIf="showProgess"></mat-spinner></mat-cell>
-  </mat-row>
-
-
-  <div *ngIf="showCalc" style="padding:10%">
-    <mat-slider style="width:100%" [min]="1" [max]="100" [step]="5" [value]="getSum()"></mat-slider></div>
-</section>
-
 
 <mat-vertical-stepper #stepper *ngIf="showQuestions">
   <mat-step *ngFor="let question of questions; let i = index">

@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {MatStepper} from "@angular/material";
+import {Component, OnInit, Inject} from '@angular/core';
+import {MatStepper,  MatDialog} from "@angular/material";
+import {ResultModalComponent} from "../result-modal/result-modal.component";
 
 @Component({
   selector: 'app-question',
@@ -8,8 +9,24 @@ import {MatStepper} from "@angular/material";
 })
 export class QuestionComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    public dialogRef: MatDialog) { }
+
+
+  openDialog(): void {
+    console.log('dia is called');
+    let dialogRef = this.dialogRef.open(ResultModalComponent, {
+      width: '100%',
+      data: { score: this.getSum() }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+
+    });
   }
+
+
 
   ngOnInit() {
     for (let i = 0; i < this.questions.length; i++) {
@@ -53,6 +70,13 @@ export class QuestionComponent implements OnInit {
     'Ud-brændt',
   ];
 
+  showProgess = false;
+  showQuestions = true;
+  showCalc=false;
+
+  status='ccccc';
+  statusList=['Please wait. Calculating stress score',  'Calibrating Stress model index', 'Aligning with space time continuem',
+  'Almost there ...', ''];
   ans = [
 
     'Tempereret',
@@ -62,7 +86,15 @@ export class QuestionComponent implements OnInit {
     'Ud-brændt',
   ];
 
+  getSum(){
+    return this.answer.reduce((sum,val)=>sum +=val);
+  }
+
   goBack(stepper: MatStepper){
+    if(stepper.selectedIndex==21){
+        this.openDialog();
+    }
     stepper.next();
+
   }
 }
