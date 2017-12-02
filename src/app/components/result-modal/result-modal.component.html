@@ -1,0 +1,19 @@
+<div style="width: 100%;text-align: right"><mat-icon (click)="closeDia()">close</mat-icon></div>
+
+<mat-header-row style="background: #6869fnf">
+  <mat-header-cell></mat-header-cell>
+</mat-header-row>
+<section >
+  <mat-row><mat-cell><h6 style="color:green;padding:20px"> {{status}} </h6></mat-cell>
+    <mat-cell><mat-spinner *ngIf="showProgess"></mat-spinner></mat-cell>
+  </mat-row>
+
+
+  <div *ngIf="showCalc" style="padding:10%">
+    <h1>Your stress score is {{score}}</h1>
+    <mat-slider style="width:100%"  [min]="1" [max]="100" [step]="5" [value]="score"></mat-slider>
+  </div>
+
+</section>
+
+

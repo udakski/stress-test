@@ -63,11 +63,11 @@ export class QuestionComponent implements OnInit {
 
   seasons = [
     '',
-    'Tempereret',
-    'Opvarmet',
-    'Over-ophedet',
-    'Ned-smeltet',
-    'Ud-brændt',
+    'Meget enig',
+    'Enig',
+    'Neutral',
+    'Uenig',
+    'Meget Uenig'
   ];
 
   showProgess = false;
@@ -78,7 +78,6 @@ export class QuestionComponent implements OnInit {
   statusList=['Please wait. Calculating stress score',  'Calibrating Stress model index', 'Aligning with space time continuem',
   'Almost there ...', ''];
   ans = [
-
     'Tempereret',
     'Opvarmet',
     'Over-ophedet',
