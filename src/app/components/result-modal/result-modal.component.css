@@ -1,0 +1,12 @@
+.step-header{
+  border-left:solid darkblue 2px;border-bottom:solid darkblue 2px; padding: 5px;
+}
+.highlight-cell{
+  background-color: lightgray;
+}
+
+table tr td{
+  height: 20px;
+  border-right: 1px solid ;
+  border-leftt: 1px solid ;
+}

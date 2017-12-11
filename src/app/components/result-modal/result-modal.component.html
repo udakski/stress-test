@@ -1,19 +1,16 @@
-<div style="width: 100%;text-align: right"><mat-icon (click)="closeDia()">close</mat-icon></div>
+<div style="width: 100%; height:40px; padding:5px;text-align: right; background-color: lightgray"><mat-icon (click)="closeDia()">close</mat-icon></div>
 
-<mat-header-row style="background: #6869fnf">
-  <mat-header-cell></mat-header-cell>
-</mat-header-row>
-<section >
-  <mat-row><mat-cell><h6 style="color:green;padding:20px"> {{status}} </h6></mat-cell>
-    <mat-cell><mat-spinner *ngIf="showProgess"></mat-spinner></mat-cell>
-  </mat-row>
+<mat-dialog-content>
 
-
-  <div *ngIf="showCalc" style="padding:10%">
-    <h1>Your stress score is {{score}}</h1>
-    <mat-slider style="width:100%"  [min]="1" [max]="100" [step]="5" [value]="score"></mat-slider>
+  <div style="padding: 20px;text-align: center">
+    <table>
+      <tr *ngFor="let x of tableSteps; let rowi = index">
+        <td *ngFor="let y of getAnArray(rowi); let celli = index" [class.highlight-cell]="celli+1==score"></td>
+        <td class="step-header highlight-cell">{{x}} </td>
+      </tr>
+      <tr>
+        <td *ngFor="let y of getAnArray(5); let celli = index" [class.highlight-cell]="celli+1==score"> </td>
+      </tr>
+      </table>
   </div>
-
-</section>
-
-
+  <mat-dialog-content>

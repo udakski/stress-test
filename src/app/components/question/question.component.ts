@@ -30,13 +30,12 @@ export class QuestionComponent implements OnInit {
 
   ngOnInit() {
     for (let i = 0; i < this.questions.length; i++) {
-      this.answer.push(0);
+      this.answer[i]= -1;
     }
-    console.dir(this.answer);
   }
 
   favoriteSeason: string;
-  answer = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  answer = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   questions = ['Jeg har overblik over mine opgaver ',
     'Jeg føler mig kompetent til de opgaver jeg løser',
     'Jeg udvikler mig i jobbet',
@@ -78,18 +77,30 @@ export class QuestionComponent implements OnInit {
   statusList=['Please wait. Calculating stress score',  'Calibrating Stress model index', 'Aligning with space time continuem',
   'Almost there ...', ''];
   ans = [
-    'Tempereret',
-    'Opvarmet',
-    'Over-ophedet',
-    'Ned-smeltet',
-    'Ud-brændt',
+    'Meget enig',
+    'Enig',
+    'Neutral',
+    'Uenig',
+    'Meget Uenig'
   ];
 
   getSum(){
-    return this.answer.reduce((sum,val)=>sum +=val);
+    let sum = 0;
+    let answers  =0;
+    console.dir(this.answer);
+    console.log('sum is ' + sum);
+    for(let x=0;x<this.answer.length;x++){
+      if(this.answer[x]==-1) continue;
+      sum +=this.answer[x];
+      answers++;
+    }
+    console.log('sum after reduce is ' + sum);
+    return Math.round(sum/answers);
   }
 
   goBack(stepper: MatStepper){
+
+
     if(stepper.selectedIndex==21){
         this.openDialog();
     }

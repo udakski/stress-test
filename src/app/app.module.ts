@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import {
   MatRadioModule, MatToolbarModule, MatSliderModule, MatProgressSpinnerModule,
-  MatDialogModule, MatIconModule
+  MatDialogModule, MatIconModule, MatDialogTitle
 } from '@angular/material'
 import {MatStepperModule} from '@angular/material'
 
