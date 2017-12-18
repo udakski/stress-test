@@ -12,15 +12,20 @@ import {MatStepperModule} from '@angular/material'
 
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './components/question/question.component';
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatChipsModule} from '@angular/material';
-import {ResultModalComponent} from "./components/result-modal/result-modal.component";
+import {ResultModalComponent} from './components/result-modal/result-modal.component';
+import {GanttChartComponent} from './components/gantt-chart/gantt-chart.component';
+import {PieChartComponent} from './components/pie-chart/pie-chart.component';
+import {DashboardComponent} from './components/dashboard/dashboard.component';
+import {GanttChartService} from './components/gantt-chart.service';
+import {GooglePieChartServiceService} from './components/google-pie-chart-service.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionComponent,ResultModalComponent
+    QuestionComponent,ResultModalComponent, DashboardComponent, PieChartComponent, GanttChartComponent
 
   ],
   imports: [
@@ -31,7 +36,7 @@ import {ResultModalComponent} from "./components/result-modal/result-modal.compo
     MatRadioModule, MatStepperModule,MatToolbarModule,MatDialogModule,
     MatChipsModule, MatSliderModule, MatProgressSpinnerModule,MatIconModule
   ],
-  providers: [],
+  providers: [GooglePieChartServiceService, GanttChartService],
   entryComponents: [
     ResultModalComponent
   ],
